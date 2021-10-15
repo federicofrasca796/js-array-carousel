@@ -3,3 +3,60 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* #region DEBUG */
+.debug .img_showreel{
+    height: 500px;
+    width: 100%;
+    background: aquamarine;
+}
+.debug .hero_img{
+    height: 100%;
+    background:chocolate;
+}
+.debug .carousel{
+    background:chartreuse;
+    height: 100%;
+}
+.debug .thumb_img{
+    border: 1px solid red;
+    height: calc(100% / 5);
+    width: 100%;
+}
+/* #endregion DEBUG */
+
+/* UTILITY */
+.clearfix::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* COMMON */
+img{
+    width: 100%;
+}
+
+/* MAIN */
+.container{
+    width: 80%;
+    height: 100vh;
+    margin: auto;
+    position: relative;
+}
+.img_showreel{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.hero_img{
+    float: left;
+    width: 80%;
+}
+.carousel{
+    float: left;
+    width: 20%;
+}
+.thumb_img{
+    /* css here */
+}
