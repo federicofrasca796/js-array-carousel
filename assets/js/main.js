@@ -34,7 +34,7 @@ Aggiungere il ciclo infinito del carosello. Ovvero se la miniatura attiva è la 
 //Strumenti: addEventListener() | array[] 
 
 
-//inserire immagini e testo
+//inserisco immagini e testo
 const heroDiv = document.querySelector('.hero');
 const carouselDiv = document.querySelector('.carousel');
 
@@ -42,30 +42,38 @@ let heroContent = '';
 let Thumbnails = '';
 
 for (let i = 0; i < items.length; i++) {
+    //accumulo tutti gli elementi degli array all'interno delle variabili
     heroContent += `
-    <img src="./assets/${items[i]}" alt="">
-    <div class="hero_txt">
-        <h1>${title[i]}</h1>
-        <p>${text[i]}</p>
-    </div>`;
+        <div class="hero_content">
+            <img src="./assets/${items[i]}" alt="">
+            <div class="hero_txt">
+                <h1>${title[i]}</h1>
+                <p>${text[i]}</p>
+            </div>
+        </div>`;
     Thumbnails += `
-    <div class="thumb_img">
-        <img src="./assets/${items[i]}" alt="">
-    </div>`;
+        <div class="thumb_img">
+            <img src="./assets/${items[i]}" alt="">
+        </div>`;
 }
-
+//stampo quello che si è generato nel for loop
 heroDiv.insertAdjacentHTML('afterbegin', heroContent);
 carouselDiv.insertAdjacentHTML('afterbegin', Thumbnails);
+
+//assegno la classe 'active' agli elementi selezionati
+let activeElement = 0;
+document.getElementsByClassName('hero_content')[activeElement].classList.add('active');
+document.getElementsByClassName('thumb_img')[activeElement].classList.add('active');
 
 //seleziono i pulsanti dalla DOM
 const scrollBtnUp = document.getElementById('btn_up');
 const scrollBtnDown = document.getElementById('btn_down');
-// console.log(scrollBtnUp,scrollBtnDown);
 
-//Per ogni click, seleziono un elemento dagli array
-scrollBtnUp.addEventListener('click', function(){
-    //cambia hero_img
-    const x = document.getElementsByClassName('hero_img')[0];
-    console.log(x);
-})
+//Per ogni click, incremento il valore di activeElement per passare ai contenuti successivi
+// scrollBtnDown.addEventListener('click', function(){
+//     activeElement++;
+//     document.querySelector('.hero_content').classList.add('active');
+//     // document.querySelector('.hero_content.active').classList.remove('active');
+    
+// })
 

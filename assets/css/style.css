@@ -42,6 +42,14 @@ img{
     object-fit: cover;
 }
 
+.hero_content.active{
+    display: block;
+}
+.thumb_img.active{
+    filter: brightness(1);
+    border: 2px solid #fff;
+}
+
 /* MAIN */
 .container{
     width: 70%;
@@ -62,6 +70,10 @@ img{
     height: 100%;
     position: relative;
 }
+.hero_content{
+    height:100%;
+    display: none;
+}
 .hero_txt{
     width: 60%;
     text-align: end;
@@ -77,14 +89,11 @@ img{
     position: relative;
 }
 .thumb_img{
-    filter: brightness(0.5);
+    filter: brightness(0.4);
     height: calc(100% / 5);
     /* transition: filter 1s; */
 }
-.active_thumb{
-    filter: brightness(1);
-    border: 1px solid #fff;
-}
+
 /* buttons */
 .scroll_btn{
     background: rgba(211, 211, 211, 0.5);
