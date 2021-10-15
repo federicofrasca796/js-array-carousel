@@ -56,7 +56,27 @@ img{
 .carousel{
     float: left;
     width: 20%;
+    position: relative;
 }
 .thumb_img{
-    /* css here */
+    filter: brightness(0.5);
+}
+.scroll_btn{
+    background: rgba(211, 211, 211, 0.5);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+}
+#btn_up,
+#btn_down{
+    left: 50%;
+    transform: translateX(-50%);
+}
+#btn_up{
+    top: 10px;
+}
+#btn_down{
+    bottom: 10px;
 }
