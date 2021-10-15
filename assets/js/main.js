@@ -69,11 +69,55 @@ document.getElementsByClassName('thumb_img')[activeElement].classList.add('activ
 const scrollBtnUp = document.getElementById('btn_up');
 const scrollBtnDown = document.getElementById('btn_down');
 
-//Per ogni click, incremento il valore di activeElement per passare ai contenuti successivi
-// scrollBtnDown.addEventListener('click', function(){
-//     activeElement++;
-//     document.querySelector('.hero_content').classList.add('active');
-//     // document.querySelector('.hero_content.active').classList.remove('active');
-    
-// })
+//SCROLL DOWN: Per ogni click, incremento il valore di activeElement per passare ai contenuti successivi
+scrollBtnDown.addEventListener('click', function(){
+    activeElement++;
+    // console.log(activeElement);
+    if (activeElement <= items.length - 1){
+        // Hero scroll 
+        document.getElementsByClassName('hero_content')[activeElement].classList.add('active');
+        document.querySelector('.hero_content.active').classList.remove('active'); 
+
+        // Thumbnails scroll 
+        document.getElementsByClassName('thumb_img')[activeElement].classList.add('active');
+        document.querySelector('.thumb_img.active').classList.remove('active'); 
+        // console.log(document.getElementsByClassName('hero_content'));
+    } else {
+        activeElement = 0;
+        // Hero scroll 
+        document.querySelector('.hero_content.active').classList.remove('active');
+        document.getElementsByClassName('hero_content')[activeElement].classList.add('active');
+
+        // Thumbnails scroll 
+        document.querySelector('.thumb_img.active').classList.remove('active');
+        document.getElementsByClassName('thumb_img')[activeElement].classList.add('active');
+        // console.log(document.getElementsByClassName('hero_content'));
+    }
+})
+
+//SCROLL UP: Per ogni click, decremento il valore di activeElement per passare ai contenuti successivi
+scrollBtnUp.addEventListener('click', function(){
+    activeElement--;
+    // console.log(activeElement);
+    if (activeElement >= 0){
+        // Hero scroll 
+        document.querySelector('.hero_content.active').classList.remove('active'); 
+        document.getElementsByClassName('hero_content')[activeElement].classList.add('active');
+       
+        // Thumbnails scroll 
+        document.querySelector('.thumb_img.active').classList.remove('active'); 
+        document.getElementsByClassName('thumb_img')[activeElement].classList.add('active');
+        // console.log(document.getElementsByClassName('hero_content'));
+    } else {
+        activeElement = items.length - 1;
+        // Hero scroll 
+        document.getElementsByClassName('hero_content')[activeElement].classList.add('active');
+        document.querySelector('.hero_content.active').classList.remove('active');
+        
+        // Thumbnails scroll 
+        document.getElementsByClassName('thumb_img')[activeElement].classList.add('active');
+        document.querySelector('.thumb_img.active').classList.remove('active');
+        // console.log(document.getElementsByClassName('hero_content'));
+    }
+})
 
