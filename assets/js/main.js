@@ -34,11 +34,38 @@ Aggiungere il ciclo infinito del carosello. Ovvero se la miniatura attiva è la 
 //Strumenti: addEventListener() | array[] 
 
 
+//inserire immagini e testo
+const heroDiv = document.querySelector('.hero');
+const carouselDiv = document.querySelector('.carousel');
+
+let heroContent = '';
+let Thumbnails = '';
+
+for (let i = 0; i < items.length; i++) {
+    heroContent += `
+    <img src="./assets/${items[i]}" alt="">
+    <div class="hero_txt">
+        <h1>${title[i]}</h1>
+        <p>${text[i]}</p>
+    </div>`;
+    Thumbnails += `
+    <div class="thumb_img">
+        <img src="./assets/${items[i]}" alt="">
+    </div>`;
+}
+
+heroDiv.insertAdjacentHTML('afterbegin', heroContent);
+carouselDiv.insertAdjacentHTML('afterbegin', Thumbnails);
+
 //seleziono i pulsanti dalla DOM
-const scrollBtnUp = document.getElementById('btn_up')
-const scrollBtnDown = document.getElementById('btn_down')
-console.log(scrollBtnUp,scrollBtnDown);
+const scrollBtnUp = document.getElementById('btn_up');
+const scrollBtnDown = document.getElementById('btn_down');
+// console.log(scrollBtnUp,scrollBtnDown);
 
 //Per ogni click, seleziono un elemento dagli array
-
+scrollBtnUp.addEventListener('click', function(){
+    //cambia hero_img
+    const x = document.getElementsByClassName('hero_img')[0];
+    console.log(x);
+})
 
