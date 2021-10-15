@@ -31,20 +31,27 @@
     display: table;
     clear: both;
 }
+.d_flex{
+    display: flex;
+}
 
 /* COMMON */
 img{
     width: 100%;
+    height:100%;
+    object-fit: cover;
 }
 
 /* MAIN */
 .container{
-    width: 80%;
+    width: 70%;
     height: 100vh;
     margin: auto;
     position: relative;
 }
 .img_showreel{
+    width: 100%;
+    height: 500px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -52,14 +59,26 @@ img{
 .hero_img{
     float: left;
     width: 80%;
+    height: 100%;
+    position: relative;
+}
+.hero_txt{
+    width: 60%;
+    text-align: end;
+    color:white;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
 }
 .carousel{
     float: left;
     width: 20%;
+    height:100%;
     position: relative;
 }
 .thumb_img{
     filter: brightness(0.5);
+    height: calc(100% / 5);
     /* transition: filter 1s; */
 }
 .active_thumb{
