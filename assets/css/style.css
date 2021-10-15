@@ -60,7 +60,13 @@ img{
 }
 .thumb_img{
     filter: brightness(0.5);
+    /* transition: filter 1s; */
 }
+.active_thumb{
+    filter: brightness(1);
+    border: 1px solid #fff;
+}
+/* buttons */
 .scroll_btn{
     background: rgba(211, 211, 211, 0.5);
     border: none;
@@ -80,3 +86,4 @@ img{
 #btn_down{
     bottom: 10px;
 }
+
